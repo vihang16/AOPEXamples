@@ -1,6 +1,9 @@
-package com.springaop.example6.within;
+package com.luxoft.springaop.example6.within;
 
-public class WithinTestImpl implements WithinTest {
+import com.luxoft.springaop.example2.Log;
+
+@Log
+public class AnnotatedWithinTestImpl implements WithinTest {
 
     @Override
     public void test() {

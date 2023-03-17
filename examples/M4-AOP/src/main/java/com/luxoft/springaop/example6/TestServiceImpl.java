@@ -1,6 +1,6 @@
-package com.springaop.example6;
+package com.luxoft.springaop.example6;
 
-import com.springaop.example2.Log;
+import com.luxoft.springaop.example2.Log;
 
 @Log
 public class TestServiceImpl implements TestService {

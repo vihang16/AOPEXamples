@@ -1,4 +1,4 @@
-package com.springaop.example1;
+package com.luxoft.springaop.example1;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -9,7 +9,7 @@ import org.springframework.core.annotation.Order;
 import java.util.Arrays;
 
 @Aspect
-@Order(2)
+
 public class LoggingAspect2 {
 
     @Pointcut("execution(* *.*User(..))")
@@ -25,8 +25,8 @@ public class LoggingAspect2 {
 
         print("LOG: CALL METHOD " + methodName + " with args " + Arrays.toString(methodArgs));
 
-        //Object result = thisJoinPoint.proceed();
-        Object result = null;
+        Object result = thisJoinPoint.proceed();
+
 
         print("LOG: METHOD  " + methodName + " returns " + result);
 

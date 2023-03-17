@@ -1,4 +1,4 @@
-package com.springaop.example6;
+package com.luxoft.springaop.example6;
 
 public interface TestService {
 

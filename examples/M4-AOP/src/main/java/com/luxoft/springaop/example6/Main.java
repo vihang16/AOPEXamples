@@ -1,6 +1,6 @@
-package com.springaop.example6;
+package com.luxoft.springaop.example6;
 
-import com.springaop.example6.within.WithinTest;
+import com.luxoft.springaop.example6.within.WithinTest;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 public class Main {

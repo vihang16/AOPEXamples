@@ -1,4 +1,4 @@
-package com.springaop.example2;
+package com.luxoft.springaop.example2;
 
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;

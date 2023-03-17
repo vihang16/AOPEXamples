@@ -1,4 +1,4 @@
-package com.springaop.example6;
+package com.luxoft.springaop.example6;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -17,22 +17,18 @@ public class WithinAspect {
 
 
     @Pointcut("within(com.luxoft.springaop.example6.within.*)")
-    @Order(10)
+
     public void allBeans() {
     }
 
     @Pointcut("@within(com.luxoft.springaop.example2.Log)")
-    @Order(2)
+
     public void allBeansWithAnnotation() {
     }
 
-    @Order(2)
     @Around("allBeans()")
-    public Object testAllBeans(ProceedingJoinPoint jp) {
-        LOGGER.setLevel(Level.FINEST);
-        ConsoleHandler consoleHandler = new ConsoleHandler();
-        consoleHandler.setLevel(Level.FINE); // set console handler logging level to FINE
-        LOGGER.addHandler(consoleHandler);
+    public Object testAllBeans(ProceedingJoinPoint jp) throws Throwable {
+        jp.proceed();
         String type = jp.getSignature().getDeclaringTypeName();
         String methodName = jp.getSignature().getName();
         Object[] methodArgs = jp.getArgs();
@@ -42,13 +38,11 @@ public class WithinAspect {
         return null;
     }
 
-    @Order(1)
+   // @Order(1)
     @Around("allBeansWithAnnotation()")
-    public Object testAllBeansWithAnnotation(ProceedingJoinPoint jp) {
-        LOGGER.setLevel(Level.FINEST);
-        ConsoleHandler consoleHandler = new ConsoleHandler();
-        consoleHandler.setLevel(Level.FINE); // set console handler logging level to FINE
-        LOGGER.addHandler(consoleHandler);
+    public Object testAllBeansWithAnnotation(ProceedingJoinPoint jp) throws Throwable {
+
+        jp.proceed();
         String type = jp.getSignature().getDeclaringTypeName();
         String methodName = jp.getSignature().getName();
         Object[] methodArgs = jp.getArgs();

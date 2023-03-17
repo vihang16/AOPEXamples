@@ -1,4 +1,4 @@
-package com.springaop.example6.within;
+package com.luxoft.springaop.example6.within;
 
 public interface WithinTest {
 
